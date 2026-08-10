@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0c0a1a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>AzWord · Profile</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  body { visibility: hidden; }
+  body.az-ready { visibility: visible; }
+</style>
+</head>
+<body class="app-shell-body app-shell">
+
+<div class="app-container profile-page page-stagger app-top-safe" style="padding-top:24px;">
+
+  <!-- PROFILE HERO CARD -->
+  <div class="profile-hero">
+    <button class="ph-settings" aria-label="Settings" onclick="location.href='settings.html'">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+      </svg>
+    </button>
+
+    <div class="ph-avatar-wrap">
+      <div class="ph-avatar" id="ph-avatar">
+        <span id="ph-initials">A</span>
+      </div>
+      <div class="ph-level-badge" id="ph-level">L 1</div>
+    </div>
+    <h2 class="ph-name" id="ph-name">Abdurasul Zokirov</h2>
+
+    <div class="ph-xp-row">
+      <span class="ph-xp-current" id="ph-xp-current">307</span>
+      <span class="ph-xp-sep">/</span>
+      <span class="ph-xp-total">500 XP</span>
+    </div>
+    <div class="ph-xp-bar"><div class="ph-xp-fill" id="ph-xp-fill"></div></div>
+
+    <!-- 4 stats -->
+    <div class="ph-stats">
+      <div class="ph-stat">
+        <div class="ph-stat-icon">🔥</div>
+        <div class="ph-stat-num" id="ps-streak">7</div>
+        <div class="ph-stat-label">day streak</div>
+      </div>
+      <div class="ph-stat">
+        <div class="ph-stat-icon">⭐</div>
+        <div class="ph-stat-num" id="ps-xp">307</div>
+        <div class="ph-stat-label">XP</div>
+      </div>
+      <div class="ph-stat">
+        <div class="ph-stat-icon">📚</div>
+        <div class="ph-stat-num" id="ps-books">2</div>
+        <div class="ph-stat-label">books</div>
+      </div>
+      <div class="ph-stat">
+        <div class="ph-stat-icon">🏆</div>
+        <div class="ph-stat-num" id="ps-ach">4</div>
+        <div class="ph-stat-label">awards</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MENU -->
+  <div class="profile-menu" style="margin-bottom:14px;">
+    <a href="achievements.html" class="pm-item press-flash">
+      <div class="pm-icon-wrap pm-gold">🏆</div>
+      <div>
+        <div class="pm-name">Achievements</div>
+        <div class="pm-sub">4 unlocked · 28 total</div>
+      </div>
+      <svg class="pm-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </a>
+    <a href="stats.html" class="pm-item press-flash">
+      <div class="pm-icon-wrap pm-blue">📈</div>
+      <div>
+        <div class="pm-name">Statistics</div>
+        <div class="pm-sub">Progress & insights</div>
+      </div>
+      <svg class="pm-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </a>
+    <a href="vocabulary.html?view=mine" class="pm-item press-flash">
+      <div class="pm-icon-wrap">📖</div>
+      <div>
+        <div class="pm-name">My Words</div>
+        <div class="pm-sub"><span class="pm-value" id="pm-words" style="color:#a78bfa;font-weight:700;">128</span> saved</div>
+      </div>
+      <svg class="pm-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </a>
+  </div>
+
+  <div class="profile-menu">
+    <a href="shop.html" class="pm-item press-flash">
+      <div class="pm-icon-wrap pm-green">🛍️</div>
+      <div>
+        <div class="pm-name">Shop</div>
+        <div class="pm-sub">Themes · Avatars · Powerups</div>
+      </div>
+      <svg class="pm-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </a>
+    <a href="settings.html" class="pm-item press-flash">
+      <div class="pm-icon-wrap pm-gray">⚙️</div>
+      <div>
+        <div class="pm-name">Settings</div>
+        <div class="pm-sub">Language · Notifications · Theme</div>
+      </div>
+      <svg class="pm-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </a>
+    <a href="#" id="btn-help" class="pm-item press-flash">
+      <div class="pm-icon-wrap pm-blue">💬</div>
+      <div>
+        <div class="pm-name">Help &amp; Support</div>
+        <div class="pm-sub">FAQ · Contact us</div>
+      </div>
+      <svg class="pm-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </a>
+    <a href="#" id="btn-logout" class="pm-item press-flash">
+      <div class="pm-icon-wrap pm-red">🚪</div>
+      <div>
+        <div class="pm-name">Log out</div>
+        <div class="pm-sub">Switch accounts</div>
+      </div>
+      <svg class="pm-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </a>
+  </div>
+
+  <div style="height: 24px;"></div>
+</div>
+
+<script src="firebase.js"></script>
+<script src="effects.js"></script>
+<script src="ripple.js"></script>
+<script src="transition.js"></script>
+<script src="bottom-nav.js"></script>
+<script>
+(function(){
+  document.body.classList.add('az-ready');
+  const $ = (id) => document.getElementById(id);
+
+  function animateNum(id, target, dur=900) {
+    const el = $(id); if (!el) return;
+    const s = performance.now();
+    (function t(n){
+      const p = Math.min(1, (n - s) / dur);
+      const v = Math.round(target * (1 - Math.pow(1 - p, 3)));
+      el.textContent = v.toLocaleString();
+      if (p < 1) requestAnimationFrame(t);
+    })(s);
+  }
+  function animateFill(id, pct, dly=250) {
+    setTimeout(() => { const el=$(id); if(el) el.style.width = Math.max(0,Math.min(100,pct))+'%'; }, dly);
+  }
+  function initialsOf(name) {
+    if (!name) return 'A';
+    const parts = String(name).trim().split(/\s+/);
+    return parts.length === 1 ? parts[0].charAt(0).toUpperCase()
+      : (parts[0].charAt(0) + parts[parts.length-1].charAt(0)).toUpperCase();
+  }
+
+  function hydrate() {
+    const auth = window.firebase && firebase.auth;
+    const db   = window.firebase && firebase.firestore;
+    if (!auth || !db) return;
+    auth().onAuthStateChanged(async (user) => {
+      if (!user) return;
+      // name
+      const displayName = user.displayName || (user.email || '').split('@')[0] || 'Learner';
+      $('ph-name').textContent = displayName;
+      const initials = initialsOf(displayName);
+      const avEl = $('ph-avatar');
+      if (user.photoURL) {
+        avEl.innerHTML = `<img src="${user.photoURL}" alt="">`;
+      } else {
+        avEl.innerHTML = `<span>${initials}</span>`;
+      }
+      $('ph-initials') && ($('ph-initials').textContent = initials);
+
+      try {
+        const snap = await db().collection('users').doc(user.uid).get({source:'default'});
+        const d = snap.exists ? (snap.data() || {}) : {};
+        const xp    = Number(d.stars || d.xp || 0);
+        const coins = Number(d.coins || 0);
+        const streak = Array.isArray(d.streakDays) ? d.streakDays.length : (Number(d.streak || 0));
+        const level = Math.floor(xp / 500) + 1;
+        const lvlXp  = xp % 500;
+
+        $('ph-level').textContent = 'L ' + level;
+        $('ph-xp-current').textContent = lvlXp;
+        animateNum('ps-streak', streak);
+        animateNum('ps-xp', xp);
+        animateFill('ph-xp-fill', (lvlXp / 500) * 100, 300);
+      } catch(e) {}
+    });
+
+    // logout
+    $('btn-logout').addEventListener('click', async (e) => {
+      e.preventDefault();
+      try { await auth().signOut(); location.href = 'index.html'; } catch(e) {}
+    });
+  }
+  hydrate();
+
+  // flash feedback
+  document.querySelectorAll('.press-flash').forEach(el => {
+    el.addEventListener('pointerdown', (e) => {
+      const r = el.getBoundingClientRect();
+      el.style.setProperty('--press-x', ((e.clientX - r.left) / r.width * 100) + '%');
+      el.style.setProperty('--press-y', ((e.clientY - r.top)  / r.height * 100) + '%');
+    });
+  });
+})();
+</script>
+</body>
+</html>

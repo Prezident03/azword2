@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0c0a1a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>AzWord · Rank</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  body { visibility: hidden; }
+  body.az-ready { visibility: visible; }
+</style>
+</head>
+<body class="app-shell-body app-shell">
+
+<div class="app-container rank-page page-stagger app-top-safe" style="padding-top:28px;">
+
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:22px;">
+    <div>
+      <h1 class="practice-title" style="font-size:1.6rem;margin-bottom:2px;">Ranking</h1>
+      <p class="practice-sub" style="margin:0;">Compete with learners worldwide</p>
+    </div>
+    <div style="padding:8px 12px;border-radius:14px;background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.2);color:#fbbf24;font-family:'Space Grotesk';font-weight:800;font-size:0.88rem;display:flex;align-items:center;gap:6px;">
+      <span>#</span><span id="my-rank-num">23</span>
+    </div>
+  </div>
+
+  <!-- Tabs: Global / Friends / Country -->
+  <div class="rank-tab-row" id="rank-tabs">
+    <button class="rank-tab is-active" data-tab="global">Global</button>
+    <button class="rank-tab" data-tab="friends">Friends</button>
+    <button class="rank-tab" data-tab="country">Country</button>
+  </div>
+
+  <!-- Podium (top 3) -->
+  <div class="rank-podium">
+    <div class="podium-col pos-2">
+      <div style="position:relative;">
+        <div class="podium-avatar">L</div>
+      </div>
+      <div class="podium-name">Liam</div>
+      <div class="podium-score">2100</div>
+      <div class="podium-pillar">2</div>
+    </div>
+    <div class="podium-col pos-1">
+      <div style="position:relative;">
+        <div class="podium-crown">👑</div>
+        <div class="podium-avatar">E</div>
+      </div>
+      <div class="podium-name">Emma</div>
+      <div class="podium-score">2540</div>
+      <div class="podium-pillar">1</div>
+    </div>
+    <div class="podium-col pos-3">
+      <div style="position:relative;">
+        <div class="podium-avatar">O</div>
+      </div>
+      <div class="podium-name">Olivia</div>
+      <div class="podium-score">1980</div>
+      <div class="podium-pillar">3</div>
+    </div>
+  </div>
+
+  <!-- Leaderboard list -->
+  <div style="display:flex;flex-direction:column;gap:10px;">
+
+    <div class="lb-item">
+      <div class="lb-rank gold">1</div>
+      <div class="lb-avatar">E</div>
+      <div class="lb-info">
+        <div class="lb-name">Emma Johnson</div>
+        <div class="lb-country">🇺🇸 United States</div>
+      </div>
+      <div style="font-size:1rem;">👑</div>
+      <div class="lb-score">2540</div>
+    </div>
+
+    <div class="lb-item">
+      <div class="lb-rank silver">2</div>
+      <div class="lb-avatar" style="background:linear-gradient(135deg,#6b7280,#9ca3af);">L</div>
+      <div class="lb-info">
+        <div class="lb-name">Liam Smith</div>
+        <div class="lb-country">🇬🇧 United Kingdom</div>
+      </div>
+      <div style="font-size:1rem;">👑</div>
+      <div class="lb-score">2100</div>
+    </div>
+
+    <div class="lb-item">
+      <div class="lb-rank bronze">3</div>
+      <div class="lb-avatar" style="background:linear-gradient(135deg,#d97706,#fbbf24);">O</div>
+      <div class="lb-info">
+        <div class="lb-name">Olivia Brown</div>
+        <div class="lb-country">🇨🇦 Canada</div>
+      </div>
+      <div style="font-size:1rem;">👑</div>
+      <div class="lb-score">1980</div>
+    </div>
+
+    <div class="lb-item">
+      <div class="lb-rank">4</div>
+      <div class="lb-avatar" style="background:linear-gradient(135deg,#34d399,#10b981);">N</div>
+      <div class="lb-info">
+        <div class="lb-name">Noah Wilson</div>
+        <div class="lb-country">🇦🇺 Australia</div>
+      </div>
+      <div></div>
+      <div class="lb-score">1760</div>
+    </div>
+
+    <div class="lb-item">
+      <div class="lb-rank">5</div>
+      <div class="lb-avatar" style="background:linear-gradient(135deg,#60a5fa,#3b82f6);">J</div>
+      <div class="lb-info">
+        <div class="lb-name">James Taylor</div>
+        <div class="lb-country">🇿🇦 South Africa</div>
+      </div>
+      <div></div>
+      <div class="lb-score">1640</div>
+    </div>
+
+    <!-- ME (highlighted) -->
+    <div class="lb-item is-me">
+      <div class="lb-rank" id="my-rank-num-2">23</div>
+      <div class="lb-avatar" id="me-avatar">A</div>
+      <div class="lb-info">
+        <div class="lb-name" id="me-name">Abdurasul Z.</div>
+        <div class="lb-country">🇺🇿 Uzbekistan</div>
+      </div>
+      <div></div>
+      <div class="lb-score" id="me-score">307</div>
+    </div>
+
+  </div>
+
+  <div style="height: 24px;"></div>
+</div>
+
+<script src="firebase.js"></script>
+<script src="effects.js"></script>
+<script src="ripple.js"></script>
+<script src="transition.js"></script>
+<script src="bottom-nav.js"></script>
+<script>
+(function(){
+  document.body.classList.add('az-ready');
+  const $ = (id) => document.getElementById(id);
+
+  function initialsOf(name) {
+    if (!name) return 'A';
+    const parts = String(name).trim().split(/\s+/);
+    return parts.length === 1 ? parts[0].charAt(0).toUpperCase()
+      : (parts[0].charAt(0) + parts[parts.length-1].charAt(0)).toUpperCase();
+  }
+  function animateNum(id, target, dur=900) {
+    const el = $(id); if (!el) return;
+    const s = performance.now();
+    (function t(n){
+      const p = Math.min(1, (n - s) / dur);
+      const v = Math.round(target * (1 - Math.pow(1 - p, 3)));
+      el.textContent = v.toLocaleString();
+      if (p < 1) requestAnimationFrame(t);
+    })(s);
+  }
+
+  // Rank tabs
+  document.querySelectorAll('#rank-tabs .rank-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('#rank-tabs .rank-tab').forEach(t => t.classList.remove('is-active'));
+      tab.classList.add('is-active');
+    });
+  });
+
+  function hydrate() {
+    const auth = window.firebase && firebase.auth;
+    if (!auth) return;
+    auth().onAuthStateChanged(async (user) => {
+      if (!user) return;
+      const db = window.firebase.firestore;
+      const displayName = user.displayName || (user.email || '').split('@')[0] || 'Learner';
+      const firstName = displayName.trim().split(/\s+/)[0];
+      const lastName  = displayName.trim().split(/\s+/).slice(-1)[0];
+      $('me-name').textContent = firstName + ' ' + (lastName ? lastName.charAt(0)+'.' : '');
+      const av = $('me-avatar');
+      if (user.photoURL) av.innerHTML = `<img src="${user.photoURL}" alt="">`;
+      else av.textContent = initialsOf(displayName);
+      if (db) {
+        try {
+          const snap = await db().collection('users').doc(user.uid).get({source:'default'});
+          const d = snap.exists ? (snap.data() || {}) : {};
+          const xp = Number(d.stars || 0);
+          animateNum('me-score', xp);
+        } catch(e) {}
+      }
+    });
+  }
+  hydrate();
+})();
+</script>
+</body>
+</html>
